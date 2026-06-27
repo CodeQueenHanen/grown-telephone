@@ -1,0 +1,78 @@
+name: Spin Up
+
+on:
+  workflow_dispatch:
+
+jobs:
+  spin-up:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Azure login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Create resource group
+        run: az group create --name grown-telephone-rg --location eastus
+
+      - name: Create storage account
+        run: |
+          az storage account create \
+            --name growntelephonestore \
+            --resource-group grown-telephone-rg \
+            --location eastus \
+            --sku Standard_LRS \
+            --allow-blob-public-access true
+
+      - name: Create function app
+        run: |
+          az functionapp show \
+            --name grown-telephone-fn \
+            --resource-group grown-telephone-rg \
+            --output none 2>/dev/null || \
+          az functionapp create \
+            --name grown-telephone-fn \
+            --resource-group grown-telephone-rg \
+            --storage-account growntelephonestore \
+            --consumption-plan-location eastus \
+            --runtime node \
+            --runtime-version 22 \
+            --functions-version 4 \
+            --os-type Linux
+
+      - name: Configure app settings
+        run: |
+          CONNECTION_STRING=$(az storage account show-connection-string \
+            --name growntelephonestore \
+            --resource-group grown-telephone-rg \
+            --query connectionString \
+            --output tsv)
+          az functionapp config appsettings set \
+            --name grown-telephone-fn \
+            --resource-group grown-telephone-rg \
+            --settings STORAGE_CONNECTION_STRING="$CONNECTION_STRING"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Build
+        working-directory: api
+        run: npm ci && npm run build
+
+      - name: Install production dependencies
+        working-directory: api
+        run: npm ci --omit=dev
+
+      - name: Deploy to Azure Functions
+        working-directory: api
+        run: |
+          zip -r deploy.zip dist/ node_modules/ host.json package.json
+          az functionapp deployment source config-zip \
+            --resource-group grown-telephone-rg \
+            --name grown-telephone-fn \
+            --src deploy.zip

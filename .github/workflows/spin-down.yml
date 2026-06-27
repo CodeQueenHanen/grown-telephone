@@ -1,0 +1,17 @@
+name: Spin Down
+
+on:
+  workflow_dispatch:
+
+jobs:
+  spin-down:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Azure login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Delete resource group
+        run: az group delete --name grown-telephone-rg --yes --no-wait

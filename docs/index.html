@@ -290,9 +290,8 @@ async function enterGameLoop() {
   if (task.type === 'write') {
     show('write-screen');
   } else if (task.type === 'draw') {
-    setupCanvas(task.prompt);
     show('draw-screen');
-    resizeCanvas();
+    setupCanvas(task.prompt);
   } else if (task.type === 'guess') {
     document.getElementById('guess-img').src = task.blobUrl;
     show('guess-screen');
@@ -331,9 +330,11 @@ function setupCanvas(prompt) {
   btn.disabled = true;
   btn.textContent = 'Draw something first';
   const canvas = document.getElementById('canvas');
+  canvas.width = 800;
+  canvas.height = 500;
   const ctx = canvas.getContext('2d');
   ctx.fillStyle = '#ffffff';
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillRect(0, 0, 800, 500);
 }
 
 function resizeCanvas() {
@@ -378,6 +379,7 @@ function toggleEraser() {
   function start(e) {
     e.preventDefault();
     drawing = true;
+    canvas.setPointerCapture(e.pointerId);
     const { x, y } = canvasPos(e, canvas);
     ctx.beginPath();
     ctx.moveTo(x, y);
@@ -469,9 +471,6 @@ async function api(method, path, body) {
 }
 
 // --- Boot ---
-window.addEventListener('resize', () => {
-  if (document.getElementById('draw-screen').classList.contains('active')) resizeCanvas();
-});
 
 document.getElementById('share-link').value =
   `${location.origin}${location.pathname}?gameId=${gameId}`;

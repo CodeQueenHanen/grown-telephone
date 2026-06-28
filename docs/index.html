@@ -224,161 +224,251 @@
     <p class="lobby-subtitle">the game of artistic miscommunication</p>
   </div>
 
-  <!-- Cartoon illustration: three characters on corded phones -->
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490 215" class="lobby-illustration" aria-hidden="true">
+  <!-- 90s three-way call: three women on corded phones, side by side -->
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 482 238" class="lobby-illustration" aria-hidden="true">
+    <defs>
+      <clipPath id="cp1"><rect x="0" y="0" width="158" height="238" rx="10"/></clipPath>
+      <clipPath id="cp2"><rect x="161" y="0" width="160" height="238" rx="10"/></clipPath>
+      <clipPath id="cp3"><rect x="324" y="0" width="158" height="238" rx="10"/></clipPath>
+    </defs>
 
-    <!-- Phone cords -->
-    <path d="M 113,78 C 132,55 148,102 163,78 C 175,58 188,96 191,84"
-          stroke="#e94560" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-    <path d="M 289,84 C 308,61 325,108 343,84 C 358,64 370,100 362,89"
-          stroke="#e94560" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <!-- Panel backgrounds -->
+    <rect x="0" y="0" width="158" height="238" rx="10" fill="#FFF0E8"/>
+    <rect x="161" y="0" width="160" height="238" rx="10" fill="#EFE8FF"/>
+    <rect x="324" y="0" width="158" height="238" rx="10" fill="#E8F5F0"/>
 
-    <!-- ===== CHARACTER 1: Animated Talker (lavender) ===== -->
-    <ellipse cx="75" cy="178" rx="24" ry="32" fill="#9c88d4"/>
-    <rect x="68" y="122" width="14" height="18" rx="4" fill="#fddbb4"/>
-    <circle cx="75" cy="97" r="28" fill="#fddbb4"/>
-    <!-- Curly purple hair -->
-    <ellipse cx="75" cy="72" rx="28" ry="13" fill="#6c2eb9"/>
-    <circle cx="48" cy="80" r="11" fill="#6c2eb9"/>
-    <circle cx="102" cy="80" r="11" fill="#6c2eb9"/>
-    <circle cx="52" cy="69" r="9" fill="#6c2eb9"/>
-    <circle cx="98" cy="69" r="9" fill="#6c2eb9"/>
-    <!-- Eyes (wide, excited) -->
-    <circle cx="65" cy="95" r="7" fill="#fff"/>
-    <circle cx="85" cy="95" r="7" fill="#fff"/>
-    <circle cx="67" cy="96.5" r="4" fill="#1a1a1a"/>
-    <circle cx="87" cy="96.5" r="4" fill="#1a1a1a"/>
-    <circle cx="68.5" cy="94.8" r="1.8" fill="#fff"/>
-    <circle cx="88.5" cy="94.8" r="1.8" fill="#fff"/>
-    <!-- Eyebrows raised -->
-    <path d="M 58,85 Q 65,80 72,85" stroke="#5a2d82" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-    <path d="M 78,85 Q 85,80 92,85" stroke="#5a2d82" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-    <!-- Rosy cheeks -->
-    <ellipse cx="54" cy="104" rx="8" ry="5" fill="#ffb3c1" opacity="0.65"/>
-    <ellipse cx="96" cy="104" rx="8" ry="5" fill="#ffb3c1" opacity="0.65"/>
-    <!-- Mouth open (talking) -->
-    <ellipse cx="75" cy="112" rx="10" ry="6" fill="#e84460"/>
-    <path d="M 65,112 Q 75,117 85,112" fill="#c0392b"/>
-    <!-- Right arm up holding phone -->
-    <path d="M 98,150 Q 116,127 110,88" stroke="#fddbb4" stroke-width="9" fill="none" stroke-linecap="round"/>
-    <g transform="translate(108,78) rotate(-18)">
-      <rect x="-5" y="-15" width="10" height="30" rx="5" fill="#1a1a1a"/>
-      <circle cx="0" cy="-9" r="4" fill="#333"/>
-      <circle cx="0" cy="9" r="4" fill="#333"/>
-    </g>
-    <!-- Left arm gesturing freely -->
-    <path d="M 52,150 Q 30,137 21,121" stroke="#fddbb4" stroke-width="9" fill="none" stroke-linecap="round"/>
-    <circle cx="19" cy="118" r="6" fill="#fddbb4"/>
-    <!-- Animated speech dots leading to cord -->
-    <circle cx="133" cy="76" r="3.5" fill="#e94560" opacity="0.75"/>
-    <circle cx="147" cy="70" r="5" fill="#e94560" opacity="0.5"/>
-    <circle cx="162" cy="67" r="7" fill="#e94560" opacity="0.28"/>
-
-    <!-- ===== CHARACTER 2: Confused Man with TWO phones (teal) ===== -->
-    <ellipse cx="240" cy="178" rx="24" ry="32" fill="#4db6ac"/>
-    <rect x="233" y="122" width="14" height="18" rx="4" fill="#fddbb4"/>
-    <circle cx="240" cy="97" r="28" fill="#fddbb4"/>
-    <!-- Messy brown hair -->
-    <ellipse cx="240" cy="72" rx="27" ry="11" fill="#5d4037"/>
-    <path d="M 214,82 Q 211,65 220,60 Q 230,54 240,70" fill="#5d4037"/>
-    <path d="M 266,82 Q 269,65 260,60 Q 250,54 240,70" fill="#5d4037"/>
-    <ellipse cx="247" cy="64" rx="5" ry="9" fill="#5d4037" transform="rotate(-18,247,64)"/>
-    <!-- Glasses -->
-    <circle cx="229" cy="97" r="9.5" stroke="#222" stroke-width="2.5" fill="rgba(210,235,255,0.2)"/>
-    <circle cx="251" cy="97" r="9.5" stroke="#222" stroke-width="2.5" fill="rgba(210,235,255,0.2)"/>
-    <line x1="238.5" y1="97" x2="241.5" y2="97" stroke="#222" stroke-width="2"/>
-    <line x1="211" y1="97" x2="219.5" y2="97" stroke="#222" stroke-width="2"/>
-    <line x1="260.5" y1="97" x2="269" y2="97" stroke="#222" stroke-width="2"/>
-    <!-- Eyes -->
-    <circle cx="229" cy="97" r="5" fill="#1a1a1a"/>
-    <circle cx="251" cy="97" r="5" fill="#1a1a1a"/>
-    <circle cx="230.5" cy="95.5" r="2" fill="#fff"/>
-    <circle cx="252.5" cy="95.5" r="2" fill="#fff"/>
-    <!-- Confused eyebrows (one up, one down) -->
-    <path d="M 221,86 Q 229,82 235,87" stroke="#5d4037" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-    <path d="M 245,87 Q 251,82 259,86" stroke="#5d4037" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-    <!-- Cheeks -->
-    <ellipse cx="218" cy="106" rx="8" ry="5" fill="#ffb3c1" opacity="0.45"/>
-    <ellipse cx="262" cy="106" rx="8" ry="5" fill="#ffb3c1" opacity="0.45"/>
-    <!-- Confused zigzag mouth -->
-    <path d="M 229,112 Q 234,117 240,112 Q 246,107 251,112" stroke="#555" stroke-width="2" fill="none" stroke-linecap="round"/>
-    <!-- Left arm + phone (left ear) -->
-    <path d="M 217,150 Q 200,131 197,96" stroke="#fddbb4" stroke-width="9" fill="none" stroke-linecap="round"/>
-    <g transform="translate(196,84) rotate(16)">
-      <rect x="-5" y="-15" width="10" height="30" rx="5" fill="#1a1a1a"/>
-      <circle cx="0" cy="-9" r="4" fill="#333"/>
-      <circle cx="0" cy="9" r="4" fill="#333"/>
-    </g>
-    <!-- Right arm + phone (right ear) -->
-    <path d="M 263,150 Q 280,131 283,96" stroke="#fddbb4" stroke-width="9" fill="none" stroke-linecap="round"/>
-    <g transform="translate(284,84) rotate(-16)">
-      <rect x="-5" y="-15" width="10" height="30" rx="5" fill="#1a1a1a"/>
-      <circle cx="0" cy="-9" r="4" fill="#333"/>
-      <circle cx="0" cy="9" r="4" fill="#333"/>
-    </g>
-    <!-- Question marks -->
-    <text x="244" y="60" font-size="20" font-weight="900" fill="#5d4037" opacity="0.85">?</text>
-    <text x="228" y="53" font-size="14" font-weight="900" fill="#5d4037" opacity="0.6">?</text>
-    <text x="258" y="56" font-size="12" font-weight="900" fill="#5d4037" opacity="0.5">?</text>
-
-    <!-- ===== CHARACTER 3: Writing Woman (coral) ===== -->
-    <ellipse cx="408" cy="178" rx="24" ry="32" fill="#ef9a9a"/>
-    <rect x="401" y="122" width="14" height="18" rx="4" fill="#fddbb4"/>
-    <!-- Head slightly tilted (holding phone on shoulder) -->
-    <g transform="rotate(-7, 408, 97)">
-      <circle cx="408" cy="97" r="28" fill="#fddbb4"/>
-      <!-- Dark hair, bun -->
-      <ellipse cx="408" cy="72" rx="27" ry="11" fill="#2d1b3d"/>
-      <circle cx="408" cy="60" r="15" fill="#2d1b3d"/>
-      <ellipse cx="403" cy="56" rx="7" ry="5" fill="#3d2550" opacity="0.55"/>
-      <!-- Eyes (focused, looking down) -->
-      <circle cx="397" cy="97" r="7" fill="#fff"/>
-      <circle cx="419" cy="97" r="7" fill="#fff"/>
-      <circle cx="399" cy="99" r="4" fill="#1a1a1a"/>
-      <circle cx="421" cy="99" r="4" fill="#1a1a1a"/>
-      <circle cx="400.5" cy="97.5" r="1.8" fill="#fff"/>
-      <circle cx="422.5" cy="97.5" r="1.8" fill="#fff"/>
-      <!-- Focused eyebrows -->
-      <path d="M 390,87 Q 397,83 403,88" stroke="#2d1b3d" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-      <path d="M 412,88 Q 419,83 426,87" stroke="#2d1b3d" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <!-- ===== PANEL 1: CORD TWIRLER ===== -->
+    <g clip-path="url(#cp1)">
+      <text x="18" y="32" font-size="16" fill="#f5a623" opacity="0.45">★</text>
+      <text x="128" y="40" font-size="10" fill="#e94560" opacity="0.38">★</text>
+      <!-- Flannel shirt -->
+      <path d="M -5,238 L -5,194 Q 28,180 79,178 Q 130,180 163,194 L 163,238 Z" fill="#8B1A1A"/>
+      <line x1="-5" y1="202" x2="163" y2="202" stroke="#BB2222" stroke-width="4" opacity="0.45"/>
+      <line x1="-5" y1="218" x2="163" y2="218" stroke="#BB2222" stroke-width="4" opacity="0.45"/>
+      <line x1="62" y1="178" x2="62" y2="238" stroke="#BB2222" stroke-width="3" opacity="0.35"/>
+      <line x1="96" y1="178" x2="96" y2="238" stroke="#BB2222" stroke-width="3" opacity="0.35"/>
+      <!-- Neck -->
+      <rect x="72" y="146" width="14" height="36" rx="5" fill="#E8A882"/>
+      <!-- Hair back (auburn, big 90s volume) -->
+      <path d="M 50,98 Q 36,128 34,175 Q 32,205 35,238" stroke="#7B3210" stroke-width="26" fill="none" stroke-linecap="round"/>
+      <path d="M 108,98 Q 122,128 124,175 Q 126,205 123,238" stroke="#7B3210" stroke-width="26" fill="none" stroke-linecap="round"/>
+      <path d="M 50,98 Q 44,64 57,42 Q 67,22 79,20 Q 91,22 101,42 Q 114,64 108,98 Q 95,85 79,85 Q 63,85 50,98 Z" fill="#7B3210"/>
+      <!-- Face -->
+      <ellipse cx="79" cy="113" rx="30" ry="36" fill="#E8A882"/>
+      <!-- Hair front/crown -->
+      <path d="M 52,92 Q 46,64 58,44 Q 68,24 79,22 Q 90,24 100,44 Q 112,64 106,92 Q 94,80 79,80 Q 64,80 52,92 Z" fill="#9B4220"/>
+      <path d="M 75,28 Q 79,22 83,28 Q 86,52 83,78" stroke="#C05020" stroke-width="6" fill="none" opacity="0.35" stroke-linecap="round"/>
+      <!-- Ears -->
+      <ellipse cx="49" cy="113" rx="7" ry="9" fill="#E8A882"/>
+      <ellipse cx="50" cy="113" rx="4" ry="5.5" fill="#D49070"/>
+      <ellipse cx="109" cy="113" rx="7" ry="9" fill="#E8A882"/>
+      <ellipse cx="108" cy="113" rx="4" ry="5.5" fill="#D49070"/>
+      <!-- Gold hoop earring (right ear) -->
+      <circle cx="109" cy="123" r="6" fill="none" stroke="#FFD700" stroke-width="2.5"/>
+      <!-- Eyes (animated, happy) -->
+      <ellipse cx="66" cy="108" rx="9" ry="6" fill="#fff"/>
+      <circle cx="68" cy="109" r="5" fill="#5A2F10"/>
+      <circle cx="68" cy="109" r="3" fill="#0a0500"/>
+      <circle cx="69.5" cy="107.5" r="1.6" fill="#fff"/>
+      <path d="M 57,108 Q 66,101 75,108" stroke="#2a0800" stroke-width="1.5" fill="none"/>
+      <ellipse cx="92" cy="108" rx="9" ry="6" fill="#fff"/>
+      <circle cx="94" cy="109" r="5" fill="#5A2F10"/>
+      <circle cx="94" cy="109" r="3" fill="#0a0500"/>
+      <circle cx="95.5" cy="107.5" r="1.6" fill="#fff"/>
+      <path d="M 83,108 Q 92,101 101,108" stroke="#2a0800" stroke-width="1.5" fill="none"/>
+      <!-- 90s high-arched brows -->
+      <path d="M 57,99 Q 66.5,93 76,99" stroke="#6B2500" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M 82,99 Q 91.5,93 101,99" stroke="#6B2500" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <!-- Nose -->
+      <path d="M 78,117 Q 75,125 79,128 Q 81,129 83,128" stroke="#C07850" stroke-width="1.5" fill="none" stroke-linecap="round"/>
       <!-- Cheeks -->
-      <ellipse cx="387" cy="106" rx="8" ry="5" fill="#ffb3c1" opacity="0.65"/>
-      <ellipse cx="429" cy="106" rx="8" ry="5" fill="#ffb3c1" opacity="0.65"/>
-      <!-- Small focused mouth -->
-      <path d="M 399,113 Q 408,119 417,113" stroke="#c0392b" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-    </g>
-    <!-- Left arm: phone shoulder-tucked -->
-    <path d="M 385,150 Q 370,133 368,101" stroke="#fddbb4" stroke-width="9" fill="none" stroke-linecap="round"/>
-    <g transform="translate(367,89) rotate(22)">
-      <rect x="-5" y="-15" width="10" height="30" rx="5" fill="#1a1a1a"/>
-      <circle cx="0" cy="-9" r="4" fill="#333"/>
-      <circle cx="0" cy="9" r="4" fill="#333"/>
-    </g>
-    <!-- Right arm: writing on notepad -->
-    <path d="M 431,150 Q 446,160 454,169" stroke="#fddbb4" stroke-width="9" fill="none" stroke-linecap="round"/>
-    <!-- Notepad -->
-    <rect x="446" y="161" width="38" height="50" rx="4" fill="#fffde7" stroke="#e0d0a0" stroke-width="1.5"/>
-    <line x1="452" y1="172" x2="480" y2="172" stroke="#ddd" stroke-width="1.5"/>
-    <line x1="452" y1="180" x2="480" y2="180" stroke="#ddd" stroke-width="1.5"/>
-    <line x1="452" y1="188" x2="480" y2="188" stroke="#ddd" stroke-width="1.5"/>
-    <line x1="452" y1="196" x2="480" y2="196" stroke="#ddd" stroke-width="1.5"/>
-    <!-- Scribbled writing -->
-    <path d="M 452,172 Q 458,169 464,172 Q 469,175 475,172" stroke="#7c4dff" stroke-width="1.5" fill="none"/>
-    <path d="M 452,180 Q 457,177 463,180 Q 468,183 472,180" stroke="#7c4dff" stroke-width="1.5" fill="none"/>
-    <path d="M 452,188 Q 456,185 461,188" stroke="#7c4dff" stroke-width="1.5" fill="none"/>
-    <!-- Pencil in right hand -->
-    <g transform="translate(451,162) rotate(-38)">
-      <rect x="-2" y="-27" width="4" height="6" rx="1" fill="#ffb3c1"/>
-      <rect x="-2" y="-21" width="4" height="25" rx="1" fill="#f5a623"/>
-      <rect x="-2" y="-21" width="4" height="5" fill="#c9a227"/>
-      <polygon points="-2,4 2,4 0,12" fill="#fddbb4"/>
+      <ellipse cx="56" cy="121" rx="12" ry="6.5" fill="#FF9999" opacity="0.38"/>
+      <ellipse cx="102" cy="121" rx="12" ry="6.5" fill="#FF9999" opacity="0.38"/>
+      <!-- Mouth (open, talking, smiling) -->
+      <path d="M 67,136 Q 79,147 91,136" fill="#B83040"/>
+      <path d="M 67,136 Q 79,141 91,136" fill="#E06070"/>
+      <path d="M 67,136 Q 72,132 79,134 Q 86,132 91,136" fill="#B83040"/>
+      <ellipse cx="79" cy="142" rx="9" ry="3.5" fill="#F5EDEE" opacity="0.7"/>
+      <!-- Right arm: phone at right ear -->
+      <path d="M 107,174 Q 124,155 120,114" stroke="#E8A882" stroke-width="12" fill="none" stroke-linecap="round"/>
+      <g transform="translate(118,102) rotate(-22)">
+        <path d="M -5.5,-22 Q -5.5,-30 0,-31 Q 5.5,-30 5.5,-22 L 5.5,22 Q 5.5,30 0,31 Q -5.5,30 -5.5,22 Z" fill="#18182a"/>
+        <circle cx="0" cy="-17" r="5.5" fill="#2c2c3e"/>
+        <circle cx="0" cy="17" r="5.5" fill="#2c2c3e"/>
+        <rect x="-3" y="-6" width="6" height="12" rx="2" fill="#22223a"/>
+      </g>
+      <!-- Cord going from phone across to left hand -->
+      <path d="M 118,123 Q 110,142 96,152 Q 80,160 62,154 Q 48,146 44,130 Q 42,117 42,106"
+            stroke="#3a3a4a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <!-- Left arm raised, index finger extended -->
+      <path d="M 50,174 Q 38,156 40,132 Q 41,117 42,106" stroke="#E8A882" stroke-width="12" fill="none" stroke-linecap="round"/>
+      <ellipse cx="42" cy="102" rx="9" ry="8" fill="#E8A882"/>
+      <rect x="38" y="84" width="8" height="22" rx="4" fill="#E8A882"/>
+      <!-- Phone cord coils wrapped around finger -->
+      <ellipse cx="42" cy="88" rx="8" ry="3.5" fill="none" stroke="#3a3a4a" stroke-width="2" transform="rotate(-15,42,88)"/>
+      <ellipse cx="42" cy="94" rx="9" ry="3.5" fill="none" stroke="#3a3a4a" stroke-width="2" transform="rotate(-8,42,94)"/>
+      <ellipse cx="42" cy="100" rx="10" ry="3.5" fill="none" stroke="#3a3a4a" stroke-width="2"/>
     </g>
 
-    <!-- Decorative sparkles -->
-    <text x="150" y="42" font-size="16" fill="#f5a623" opacity="0.65">✦</text>
-    <text x="327" y="40" font-size="12" fill="#e94560" opacity="0.5">✦</text>
-    <text x="33" y="138" font-size="11" fill="#7c4dff" opacity="0.4">★</text>
-    <text x="458" y="144" font-size="11" fill="#4db6ac" opacity="0.45">★</text>
+    <!-- Dividers -->
+    <rect x="158" y="0" width="3" height="238" fill="#C8C0B8"/>
+    <rect x="321" y="0" width="3" height="238" fill="#C0C8C0"/>
+
+    <!-- ===== PANEL 2: NOTEBOOK DRAWER ===== -->
+    <g clip-path="url(#cp2)">
+      <!-- Background smiley doodle -->
+      <circle cx="302" cy="28" r="11" fill="none" stroke="#C8A8E8" stroke-width="1.8" opacity="0.5"/>
+      <path d="M 296,31 Q 302,36 308,31" stroke="#C8A8E8" stroke-width="1.5" fill="none" opacity="0.5"/>
+      <circle cx="298" cy="26" r="1.5" fill="#C8A8E8" opacity="0.55"/>
+      <circle cx="306" cy="26" r="1.5" fill="#C8A8E8" opacity="0.55"/>
+      <!-- Purple top -->
+      <path d="M 155,238 L 155,194 Q 188,180 241,178 Q 294,180 327,194 L 327,238 Z" fill="#6B30B8"/>
+      <!-- Neck -->
+      <rect x="234" y="146" width="14" height="36" rx="5" fill="#C47850"/>
+      <!-- Natural hair: big puff with hot-pink scrunchie -->
+      <ellipse cx="241" cy="82" rx="41" ry="44" fill="#100600"/>
+      <ellipse cx="241" cy="72" rx="35" ry="36" fill="#1A0A00"/>
+      <ellipse cx="241" cy="83" rx="19" ry="7" fill="#FF4DA6" transform="rotate(-8,241,83)"/>
+      <ellipse cx="241" cy="83" rx="14" ry="5" fill="#FF70BB" transform="rotate(-8,241,83)"/>
+      <path d="M 226,80 Q 220,70 227,65" stroke="#FF4DA6" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M 256,80 Q 262,70 255,65" stroke="#FF4DA6" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <!-- Face -->
+      <ellipse cx="241" cy="117" rx="30" ry="36" fill="#C47850"/>
+      <!-- Ears -->
+      <ellipse cx="211" cy="117" rx="7" ry="9" fill="#C47850"/>
+      <ellipse cx="211" cy="117" rx="4" ry="5.5" fill="#A36040"/>
+      <circle cx="211" cy="126" r="4" fill="#FFD700"/>
+      <ellipse cx="271" cy="117" rx="7" ry="9" fill="#C47850"/>
+      <ellipse cx="271" cy="117" rx="4" ry="5.5" fill="#A36040"/>
+      <!-- Eyes (looking slightly down at notebook) -->
+      <ellipse cx="228" cy="111" rx="9" ry="6" fill="#fff"/>
+      <circle cx="229" cy="113" r="5" fill="#1A0800"/>
+      <circle cx="229" cy="113" r="3" fill="#080300"/>
+      <circle cx="230.5" cy="111.5" r="1.6" fill="#fff"/>
+      <path d="M 219,111 Q 228,104 237,111" stroke="#0a0400" stroke-width="1.5" fill="none"/>
+      <ellipse cx="254" cy="111" rx="9" ry="6" fill="#fff"/>
+      <circle cx="255" cy="113" r="5" fill="#1A0800"/>
+      <circle cx="255" cy="113" r="3" fill="#080300"/>
+      <circle cx="256.5" cy="111.5" r="1.6" fill="#fff"/>
+      <path d="M 245,111 Q 254,104 263,111" stroke="#0a0400" stroke-width="1.5" fill="none"/>
+      <!-- Focused eyebrows -->
+      <path d="M 219,102 Q 228,96 237,102" stroke="#100600" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M 245,102 Q 254,96 263,102" stroke="#100600" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <!-- Nose -->
+      <path d="M 240,120 Q 237,128 241,131 Q 243,132 245,131" stroke="#9A5030" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <!-- Cheeks -->
+      <ellipse cx="218" cy="122" rx="11" ry="6" fill="#FF9999" opacity="0.3"/>
+      <ellipse cx="264" cy="122" rx="11" ry="6" fill="#FF9999" opacity="0.3"/>
+      <!-- Mouth (slight focus-smile) -->
+      <path d="M 231,138 Q 241,144 251,138" stroke="#904030" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <ellipse cx="241" cy="141" rx="7" ry="2.5" fill="#B05030" opacity="0.5"/>
+      <!-- Left arm: phone tucked at shoulder/ear -->
+      <path d="M 212,166 Q 196,148 200,112" stroke="#C47850" stroke-width="12" fill="none" stroke-linecap="round"/>
+      <g transform="translate(199,100) rotate(36)">
+        <path d="M -5.5,-22 Q -5.5,-30 0,-31 Q 5.5,-30 5.5,-22 L 5.5,22 Q 5.5,30 0,31 Q -5.5,30 -5.5,22 Z" fill="#18182a"/>
+        <circle cx="0" cy="-17" r="5.5" fill="#2c2c3e"/>
+        <circle cx="0" cy="17" r="5.5" fill="#2c2c3e"/>
+      </g>
+      <path d="M 202,121 Q 198,133 193,146 Q 188,160 182,174" stroke="#3a3a4a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <!-- Right arm: reaching down to write -->
+      <path d="M 270,166 Q 284,177 292,193" stroke="#C47850" stroke-width="12" fill="none" stroke-linecap="round"/>
+      <!-- Notebook with pink spiral binding -->
+      <rect x="276" y="188" width="44" height="50" rx="5" fill="#fffde7" stroke="#d0c050" stroke-width="1.5"/>
+      <rect x="276" y="188" width="7" height="50" rx="3" fill="#FF4DA6"/>
+      <circle cx="279.5" cy="198" r="3.2" fill="#fffde7"/>
+      <circle cx="279.5" cy="210" r="3.2" fill="#fffde7"/>
+      <circle cx="279.5" cy="222" r="3.2" fill="#fffde7"/>
+      <circle cx="279.5" cy="234" r="3.2" fill="#fffde7"/>
+      <line x1="287" y1="200" x2="316" y2="200" stroke="#ddd" stroke-width="1.5"/>
+      <line x1="287" y1="209" x2="316" y2="209" stroke="#ddd" stroke-width="1.5"/>
+      <line x1="287" y1="218" x2="316" y2="218" stroke="#ddd" stroke-width="1.5"/>
+      <line x1="287" y1="227" x2="316" y2="227" stroke="#ddd" stroke-width="1.5"/>
+      <!-- Doodle on notebook page -->
+      <path d="M 287,200 Q 293,196 299,200 Q 305,204 311,200" stroke="#6B30B8" stroke-width="1.5" fill="none"/>
+      <circle cx="298" cy="213" r="5" fill="none" stroke="#e94560" stroke-width="1.5"/>
+      <path d="M 287,227 Q 292,224 297,227" stroke="#6B30B8" stroke-width="1.5" fill="none"/>
+      <!-- Pencil -->
+      <g transform="translate(287,186) rotate(-44)">
+        <rect x="-2.5" y="-26" width="5" height="6" rx="1" fill="#ffb3c8"/>
+        <rect x="-2.5" y="-20" width="5" height="25" rx="1" fill="#F8C030"/>
+        <rect x="-2.5" y="-20" width="5" height="5" fill="#C8A025"/>
+        <polygon points="-2.5,5 2.5,5 0,13" fill="#fddbb4"/>
+      </g>
+    </g>
+
+    <!-- ===== PANEL 3: CONFUSED ===== -->
+    <g clip-path="url(#cp3)">
+      <!-- Background: thin 90s wallpaper lines -->
+      <line x1="324" y1="18" x2="482" y2="18" stroke="#A8D8C8" stroke-width="1" opacity="0.55"/>
+      <line x1="324" y1="36" x2="482" y2="36" stroke="#A8D8C8" stroke-width="1" opacity="0.55"/>
+      <line x1="324" y1="54" x2="482" y2="54" stroke="#A8D8C8" stroke-width="1" opacity="0.55"/>
+      <!-- Sage green top -->
+      <path d="M 318,238 L 318,194 Q 352,180 403,178 Q 454,180 488,194 L 488,238 Z" fill="#5A9E85"/>
+      <!-- Neck -->
+      <rect x="396" y="146" width="14" height="36" rx="5" fill="#F0CBB0"/>
+      <!-- Hair: dark, straight, flowing shoulder-length -->
+      <path d="M 375,100 Q 360,128 358,175 Q 356,205 359,238" stroke="#1A0800" stroke-width="28" fill="none" stroke-linecap="round"/>
+      <path d="M 431,100 Q 446,128 448,175 Q 450,205 447,238" stroke="#1A0800" stroke-width="28" fill="none" stroke-linecap="round"/>
+      <path d="M 377,94 Q 372,65 382,44 Q 391,24 403,22 Q 415,24 424,44 Q 434,65 429,94 Q 418,82 403,82 Q 388,82 377,94 Z" fill="#2A1000"/>
+      <!-- Face -->
+      <ellipse cx="403" cy="113" rx="30" ry="36" fill="#F0CBB0"/>
+      <!-- Ears -->
+      <ellipse cx="373" cy="113" rx="7" ry="9" fill="#F0CBB0"/>
+      <ellipse cx="373" cy="113" rx="4" ry="5.5" fill="#D8A888"/>
+      <!-- Silver hoop -->
+      <circle cx="373" cy="122" r="5.5" fill="none" stroke="#C0C0C0" stroke-width="2.5"/>
+      <ellipse cx="433" cy="113" rx="7" ry="9" fill="#F0CBB0"/>
+      <ellipse cx="433" cy="113" rx="4" ry="5.5" fill="#D8A888"/>
+      <!-- Eyes (wide open, confused) -->
+      <ellipse cx="390" cy="108" rx="9.5" ry="7" fill="#fff"/>
+      <circle cx="391" cy="110" r="5" fill="#3A2000"/>
+      <circle cx="391" cy="110" r="3" fill="#100800"/>
+      <circle cx="392.5" cy="108.5" r="1.8" fill="#fff"/>
+      <path d="M 380.5,108 Q 390,101 399.5,108" stroke="#1a0800" stroke-width="1.5" fill="none"/>
+      <ellipse cx="416" cy="108" rx="9.5" ry="7" fill="#fff"/>
+      <circle cx="417" cy="110" r="5" fill="#3A2000"/>
+      <circle cx="417" cy="110" r="3" fill="#100800"/>
+      <circle cx="418.5" cy="108.5" r="1.8" fill="#fff"/>
+      <path d="M 406.5,108 Q 416,101 425.5,108" stroke="#1a0800" stroke-width="1.5" fill="none"/>
+      <!-- Confused brows: left raised way up, right furrowed -->
+      <path d="M 381,97 Q 390,90 399,96" stroke="#1a0800" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M 407,95 Q 416,88 425,94" stroke="#1a0800" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M 401,99 Q 403,95 405,99" stroke="#C09070" stroke-width="1.2" fill="none"/>
+      <!-- Nose -->
+      <path d="M 402,117 Q 399,125 403,128 Q 405,129 407,128" stroke="#C09070" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <!-- Cheeks -->
+      <ellipse cx="381" cy="121" rx="12" ry="6.5" fill="#FF9999" opacity="0.38"/>
+      <ellipse cx="425" cy="121" rx="12" ry="6.5" fill="#FF9999" opacity="0.38"/>
+      <!-- Mouth: open, confused -->
+      <path d="M 393,137 Q 403,147 413,137" fill="#C05060"/>
+      <path d="M 393,137 Q 403,142 413,137" fill="#E07080"/>
+      <path d="M 393,137 Q 398,133 403,135 Q 408,133 413,137" fill="#C05060"/>
+      <ellipse cx="403" cy="143" rx="7" ry="3.5" fill="#F5ECEC" opacity="0.55"/>
+      <!-- Right arm: phone slightly pulled from ear -->
+      <path d="M 425,170 Q 442,152 440,112" stroke="#F0CBB0" stroke-width="12" fill="none" stroke-linecap="round"/>
+      <g transform="translate(440,100) rotate(-32)">
+        <path d="M -5.5,-22 Q -5.5,-30 0,-31 Q 5.5,-30 5.5,-22 L 5.5,22 Q 5.5,30 0,31 Q -5.5,30 -5.5,22 Z" fill="#18182a"/>
+        <circle cx="0" cy="-17" r="5.5" fill="#2c2c3e"/>
+        <circle cx="0" cy="17" r="5.5" fill="#2c2c3e"/>
+        <rect x="-3" y="-6" width="6" height="12" rx="2" fill="#22223a"/>
+      </g>
+      <path d="M 442,119 Q 450,132 454,148 Q 458,163 462,178" stroke="#3a3a4a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <!-- Left arm: open-palm "huh?" gesture -->
+      <path d="M 381,170 Q 365,153 355,139" stroke="#F0CBB0" stroke-width="12" fill="none" stroke-linecap="round"/>
+      <ellipse cx="352" cy="134" rx="12" ry="9" fill="#F0CBB0" transform="rotate(15,352,134)"/>
+      <line x1="344" y1="129" x2="339" y2="118" stroke="#F0CBB0" stroke-width="5" stroke-linecap="round"/>
+      <line x1="350" y1="126" x2="348" y2="115" stroke="#F0CBB0" stroke-width="5" stroke-linecap="round"/>
+      <line x1="357" y1="125" x2="358" y2="114" stroke="#F0CBB0" stroke-width="5" stroke-linecap="round"/>
+      <line x1="363" y1="127" x2="367" y2="117" stroke="#F0CBB0" stroke-width="5" stroke-linecap="round"/>
+      <!-- Floating question marks -->
+      <text x="451" y="70" font-size="24" font-weight="900" fill="#8090B0" opacity="0.6" font-family="serif">?</text>
+      <text x="436" y="52" font-size="16" font-weight="900" fill="#8090B0" opacity="0.42" font-family="serif">?</text>
+    </g>
+
+    <!-- Panel border outlines (on top) -->
+    <rect x="0" y="0" width="158" height="238" rx="10" fill="none" stroke="#E0CEC8" stroke-width="2"/>
+    <rect x="161" y="0" width="160" height="238" rx="10" fill="none" stroke="#D5C8E8" stroke-width="2"/>
+    <rect x="324" y="0" width="158" height="238" rx="10" fill="none" stroke="#C8D8D0" stroke-width="2"/>
   </svg>
 
   <div class="lobby-card">

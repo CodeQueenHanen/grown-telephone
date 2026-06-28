@@ -432,6 +432,10 @@ async function enterGameLoop() {
     pollInterval = setInterval(enterGameLoop, 3000);
     return;
   }
+  if (task.type === 'reveal') {
+    showReveal();
+    return;
+  }
   if (task.type === 'write') {
     show('write-screen');
   } else if (task.type === 'draw') {

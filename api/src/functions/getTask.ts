@@ -23,6 +23,9 @@ async function getTask(request: HttpRequest, context: InvocationContext): Promis
         return { status: 404, jsonBody: { error: 'game not found' } };
     }
 
+    if (game.phase === 'reveal') {
+        return { status: 200, jsonBody: { type: 'reveal' } };
+    }
     if (game.phase !== 'active') {
         return { status: 200, jsonBody: { type: 'wait' } };
     }

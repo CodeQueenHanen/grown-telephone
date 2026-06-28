@@ -253,7 +253,7 @@ function copyLink() {
 }
 
 async function pollLobby() {
-  const state = await api('GET', `game-state?gameId=${gameId}&playerId=${playerId}`);
+  const state = await api('GET', `gameState?gameId=${gameId}&playerId=${playerId}`);
   document.getElementById('player-count').textContent = state.playerCount;
   const list = document.getElementById('player-list');
   list.innerHTML = '';
@@ -274,14 +274,14 @@ async function pollLobby() {
 }
 
 async function startGame() {
-  await api('GET', `game-state?gameId=${gameId}&playerId=${playerId}&start=true`);
+  await api('GET', `gameState?gameId=${gameId}&playerId=${playerId}&start=true`);
   clearInterval(pollInterval);
   enterGameLoop();
 }
 
 // --- Game loop ---
 async function enterGameLoop() {
-  const task = await api('GET', `get-task?gameId=${gameId}&playerId=${playerId}`);
+  const task = await api('GET', `getTask?gameId=${gameId}&playerId=${playerId}`);
   if (task.type === 'wait') {
     show('wait-screen');
     pollInterval = setInterval(enterGameLoop, 3000);
@@ -300,7 +300,7 @@ async function enterGameLoop() {
 }
 
 async function pollForReveal() {
-  const state = await api('GET', `game-state?gameId=${gameId}&playerId=${playerId}`);
+  const state = await api('GET', `gameState?gameId=${gameId}&playerId=${playerId}`);
   if (state.phase === 'reveal') {
     clearInterval(pollInterval);
     showReveal();
@@ -312,7 +312,7 @@ async function submitPhrase() {
   const text = document.getElementById('phrase-input').value.trim();
   if (!text) return;
   document.getElementById('phrase-submit').disabled = true;
-  await api('POST', `submit-text?gameId=${gameId}&playerId=${playerId}`, { text });
+  await api('POST', `submitText?gameId=${gameId}&playerId=${playerId}`, { text });
   show('wait-screen');
   pollInterval = setInterval(pollForReveal, 3000);
 }
@@ -420,7 +420,7 @@ async function submitDrawing() {
   const canvas = document.getElementById('canvas');
   document.getElementById('draw-submit').disabled = true;
   const blob = await new Promise(res => canvas.toBlob(res, 'image/png'));
-  await fetch(`${API}/submit-drawing?gameId=${gameId}&playerId=${playerId}`, {
+  await fetch(`${API}/submitDrawing?gameId=${gameId}&playerId=${playerId}`, {
     method: 'POST',
     headers: { 'Content-Type': 'image/png' },
     body: blob,
@@ -433,14 +433,14 @@ async function submitDrawing() {
 async function submitGuess() {
   const text = document.getElementById('guess-input').value.trim();
   if (!text) return;
-  await api('POST', `submit-text?gameId=${gameId}&playerId=${playerId}`, { text });
+  await api('POST', `submitText?gameId=${gameId}&playerId=${playerId}`, { text });
   show('wait-screen');
   pollInterval = setInterval(pollForReveal, 3000);
 }
 
 // --- Reveal ---
 async function showReveal() {
-  const { entries } = await api('GET', `get-chain?gameId=${gameId}`);
+  const { entries } = await api('GET', `getChain?gameId=${gameId}`);
   const container = document.getElementById('chain-container');
   container.innerHTML = '';
   const labels = ['Started with', 'Drew', 'Guessed', 'Drew', 'Guessed', 'Drew', 'Guessed'];

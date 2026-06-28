@@ -281,6 +281,7 @@ async function startGame() {
 
 // --- Game loop ---
 async function enterGameLoop() {
+  clearInterval(pollInterval);
   const task = await api('GET', `getTask?gameId=${gameId}&playerId=${playerId}`);
   if (task.type === 'wait') {
     show('wait-screen');
@@ -393,7 +394,7 @@ function toggleEraser() {
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
     ctx.strokeStyle = erasing ? '#ffffff' : currentColor;
-    ctx.globalCompositeOperation = erasing ? 'destination-out' : 'source-over';
+    ctx.globalCompositeOperation = 'source-over';
     ctx.lineTo(x, y);
     ctx.stroke();
     ctx.beginPath();

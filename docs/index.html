@@ -165,6 +165,9 @@
   <button class="btn-primary" id="start-btn" disabled onclick="startGame()">
     Waiting for players… (need 2+)
   </button>
+  <p id="waiting-for-host" style="display:none;text-align:center;color:var(--muted);font-size:0.9rem;">
+    Waiting for the host to start the game…
+  </p>
 </div>
 
 <!-- WRITE -->
@@ -475,6 +478,11 @@ async function api(method, path, body) {
 
 document.getElementById('share-link').value =
   `${location.origin}${location.pathname}?gameId=${gameId}`;
+
+if (!isCreator) {
+  document.getElementById('start-btn').style.display = 'none';
+  document.getElementById('waiting-for-host').style.display = 'block';
+}
 
 show('lobby-screen');
 pollInterval = setInterval(pollLobby, 3000);

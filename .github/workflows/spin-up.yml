@@ -54,6 +54,10 @@ jobs:
             --name grown-telephone-fn \
             --resource-group grown-telephone-rg \
             --settings STORAGE_CONNECTION_STRING="$CONNECTION_STRING"
+          az functionapp cors add \
+            --name grown-telephone-fn \
+            --resource-group grown-telephone-rg \
+            --allowed-origins "*"
 
       - name: Set up Node.js
         uses: actions/setup-node@v4

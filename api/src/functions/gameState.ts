@@ -46,9 +46,11 @@ async function gameState(request: HttpRequest, context: InvocationContext): Prom
     }
     playerCount = allPlayers.length;
 
+    allPlayers.sort((a, b) => (a.joinedAt ?? 0) - (b.joinedAt ?? 0));
+    const myOrder = allPlayers.findIndex(p => p.rowKey === playerId);
+
     // Assign orders by join time and flip to active
     if (request.query.get('start') === 'true' && phase === 'lobby' && playerCount >= 2) {
-        allPlayers.sort((a, b) => (a.joinedAt ?? 0) - (b.joinedAt ?? 0));
         await Promise.all(
             allPlayers.map((p, i) =>
                 players.updateEntity({ partitionKey: gameId, rowKey: p.rowKey!, order: i }, 'Merge')
@@ -58,7 +60,7 @@ async function gameState(request: HttpRequest, context: InvocationContext): Prom
         await games.updateEntity({ partitionKey: 'game', rowKey: gameId, phase, playerCount }, 'Merge');
     }
 
-    return { status: 200, jsonBody: { round, phase, playerCount } };
+    return { status: 200, jsonBody: { round, phase, playerCount, myOrder } };
 }
 
 app.http('gameState', {

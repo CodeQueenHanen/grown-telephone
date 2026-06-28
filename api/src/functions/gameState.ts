@@ -1,4 +1,5 @@
 import { app, HttpRequest, HttpResponseInit, InvocationContext } from '@azure/functions';
+import { RestError } from '@azure/data-tables';
 import { getTable } from '../lib/tableClient';
 
 async function gameState(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
@@ -27,18 +28,34 @@ async function gameState(request: HttpRequest, context: InvocationContext): Prom
         await games.createEntity({ partitionKey: 'game', rowKey: gameId, phase, round, playerCount });
     }
 
-    try {
-        await players.getEntity(gameId, playerId);
-    } catch {
-        const order = playerCount;
-        await players.createEntity({ partitionKey: gameId, rowKey: playerId, order });
-        playerCount += 1;
-        await games.updateEntity({ partitionKey: 'game', rowKey: gameId, playerCount }, 'Merge');
+    // Idempotent join: 409 means already registered, which is fine
+    if (phase === 'lobby') {
+        try {
+            await players.createEntity({ partitionKey: gameId, rowKey: playerId, joinedAt: Date.now(), order: -1 });
+        } catch (e) {
+            if (!(e instanceof RestError) || e.statusCode !== 409) throw e;
+        }
     }
 
+    // Count from the table — avoids race conditions with a stored counter
+    const allPlayers: Array<{ rowKey?: string; joinedAt?: number }> = [];
+    for await (const p of players.listEntities<{ joinedAt?: number }>({
+        queryOptions: { filter: `PartitionKey eq '${gameId}'` },
+    })) {
+        allPlayers.push(p);
+    }
+    playerCount = allPlayers.length;
+
+    // Assign orders by join time and flip to active
     if (request.query.get('start') === 'true' && phase === 'lobby' && playerCount >= 2) {
+        allPlayers.sort((a, b) => (a.joinedAt ?? 0) - (b.joinedAt ?? 0));
+        await Promise.all(
+            allPlayers.map((p, i) =>
+                players.updateEntity({ partitionKey: gameId, rowKey: p.rowKey!, order: i }, 'Merge')
+            )
+        );
         phase = 'active';
-        await games.updateEntity({ partitionKey: 'game', rowKey: gameId, phase }, 'Merge');
+        await games.updateEntity({ partitionKey: 'game', rowKey: gameId, phase, playerCount }, 'Merge');
     }
 
     return { status: 200, jsonBody: { round, phase, playerCount } };
